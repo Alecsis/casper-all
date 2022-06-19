@@ -2,17 +2,18 @@ prepare:
 	rustup target add wasm32-unknown-unknown
 
 build-contracts:
-	cd vault && cargo build --release --target wasm32-unknown-unknown
-	wasm-strip ./target/wasm32-unknown-unknown/release/contract.wasm 2>/dev/null | true
+	cargo build --release --target wasm32-unknown-unknown
+	wasm-strip ./target/wasm32-unknown-unknown/release/vault.wasm 2>/dev/null | true
+	wasm-strip ./target/wasm32-unknown-unknown/release/remove_named_key.wasm 2>/dev/null | true
 
 clippy:
-	cd vault && cargo clippy --all-targets -- -D warnings
+	cargo clippy --all-targets -- -D warnings
 
 check-lint: clippy
-	cd vault && cargo fmt -- --check
+	cargo fmt -- --check
 
 lint: clippy
-	cd vault && cargo fmt
+	cargo fmt
 
 clean:
-	cd vault && cargo clean
+	cargo clean

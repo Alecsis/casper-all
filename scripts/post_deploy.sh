@@ -1,6 +1,6 @@
 CHAIN_NAME="casper-test"
 NODE_ADDRESS="http://16.162.124.124:7777"
-PATH_TO_YOUR_KEY="/home/ubuntu/casper/vault/wallet"
+PATH_TO_YOUR_KEY="./wallet"
 DEPLOY_HASH="3840fa9386bce722d7632ed87d6e58702072dc6a4d19d5dc5567cf8684b98b00"
 
 # Get the account hash

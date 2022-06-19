@@ -1,5 +1,6 @@
 [workspace]
 
 members = [
-    "vault",
+    "sessions/remove_named_key",
+    "contracts/vault",
 ]

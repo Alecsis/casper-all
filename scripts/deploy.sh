@@ -1,6 +1,6 @@
 CHAIN_NAME="casper-test"
 NODE_ADDRESS="http://16.162.124.124:7777"
-PATH_TO_YOUR_KEY="/home/ubuntu/casper/vault/wallet"
+PATH_TO_YOUR_KEY="./wallet"
 
 # Get the account hash
 ACCOUNT_HASH=$(casper-client account-address -p $PATH_TO_YOUR_KEY/public_key.pem)

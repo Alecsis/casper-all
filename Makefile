@@ -5,6 +5,7 @@ build-contracts:
 	cargo build --release --target wasm32-unknown-unknown
 	wasm-strip ./target/wasm32-unknown-unknown/release/vault.wasm 2>/dev/null | true
 	wasm-strip ./target/wasm32-unknown-unknown/release/remove_named_key.wasm 2>/dev/null | true
+	wasm-strip ./target/wasm32-unknown-unknown/release/purse_transfer.wasm 2>/dev/null | true
 
 clippy:
 	cargo clippy --all-targets -- -D warnings

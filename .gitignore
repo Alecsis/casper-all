@@ -1,2 +1,4 @@
 wallet/
 target/
+Cargo.toml
+.DS_Store

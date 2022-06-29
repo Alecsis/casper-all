@@ -3,5 +3,6 @@
 members = [
     "sessions/remove_named_key",
     "sessions/purse_transfer",
+    "sessions/create_writable_purse",
     "contracts/vault",
 ]

@@ -1,6 +1,7 @@
 CHAIN_NAME="casper-test"
 NODE_ADDRESS="http://16.162.124.124:7777"
 PATH_TO_YOUR_KEY="./wallet"
+CONTRACT_NAME="create_writable_purse"
 
 # Get the account hash
 ACCOUNT_HASH=$(casper-client account-address -p $PATH_TO_YOUR_KEY/public_key.pem)
@@ -21,7 +22,7 @@ DEPLOY_HASH=$(casper-client put-deploy \
     --chain-name casper-test \
     --secret-key $PATH_TO_YOUR_KEY/secret_key.pem \
     --payment-amount 50000000000 \
-    --session-path ./target/wasm32-unknown-unknown/release/contract.wasm | jq -r '.result.deploy_hash')
+    --session-path ./target/wasm32-unknown-unknown/release/$CONTRACT_NAME.wasm | jq -r '.result.deploy_hash')
 echo "Deploy result: $DEPLOY_HASH"
 
 DEPLOY_RESULT=$(casper-client get-deploy \
